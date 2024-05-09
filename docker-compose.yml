@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  web:
+    image: node:18.20.2
+    restart: always
+    working_dir: /home/app
+    ports:
+      - 81:3000
+    volumes:
+      - .:/home/app
+    command: "bash -c 'npm install && npm start'"
+    
