@@ -10,4 +10,14 @@ services:
     volumes:
       - .:/home/app
     command: "bash -c 'npm install && npm start'"
+
+  db:
+    image: mysql:8.0.36
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: asdf535opij!
+    ports:
+      - 9856:3306
+    volumes:
+      - ./db:/var/lib/mysql
     
